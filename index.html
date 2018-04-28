@@ -1,1 +1,37 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dainguyen&#39;blog | Tutorial for using VuePress with GitHubpage to make blog</title>
+    <meta name="description" content="Share knowleage about web programing">
+    
+    <meta name="description" content="Share knownlege about web programing"><meta name="keywords" content="Vuejs, Vuepress, Javascript, HTML, CSS, Design_Pattern, Front-end">
+    <link rel="preload" href="/assets/css/1.styles.7347d376.css" as="style"><link rel="preload" href="/assets/js/app.7eb0de9b.js" as="script"><link rel="preload" href="/assets/js/0.54d8d184.js" as="script">
+    <link rel="stylesheet" href="/assets/css/1.styles.7347d376.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-exact-active router-link-active"><!----><span class="site-name">
+      Dainguyen'blog
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><!----></div></header><div class="sidebar-mask"></div><div class="sidebar"><!----><!----></div><div class="page"><div class="content"><h1 id="tutorial-for-using-vuepress-with-githubpage-to-make-blog"><a href="#tutorial-for-using-vuepress-with-githubpage-to-make-blog" aria-hidden="true" class="header-anchor">#</a> Tutorial for using VuePress with GitHubpage to make blog</h1><p>Recently, some friend in freecodecamp Hanoi group who start write blog by using github page. It make me curious about making a blog by githubpage. I start read guide in tutorial in home page to create static page in github page. Every thing is seem easy by creating a index.html file with several the tags. But no blog like this, I need decorate my blog and I continue find out how to add theme for my blog. So I found Jekyll that support for github page. Great! the themes of Jekyll arr really nice but if I use it, I need install ruby and setting something to apply this theme. I don't want install a something that I hardly use. So I have working experience with Vuejs and I think I should make my blog by Vuejs.</p><p>VuePress is new production of EvanYou that to generate the static web and is SEO-friendly.
+You can read about the main feature of VuePress in <a href="https://vuepress.vuejs.org/guide/#features" target="_blank" rel="noopener noreferrer">here</a>.
+I feel the document of Vuepress is not good and I must take more time to understand how to use.</p><h2 id="install-and-run-vuepress"><a href="#install-and-run-vuepress" aria-hidden="true" class="header-anchor">#</a> Install and run Vuepress</h2><p>So I start install by npm:</p><pre class="language-bash"><code>$ <span class="token function">mkdir</span> blog
+$ <span class="token function">cd</span> blog
+$ <span class="token function">npm</span> init
+$ <span class="token function">npm</span> <span class="token function">install</span> --save vuepress
+</code></pre><p>beacuse Vuepress don't have CLI so you must config <code>package.json</code> command to run dev mode and build mode.</p><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;docs:dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress dev docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;docs:build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress build docs&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>So I try open dev mode</p><pre class="language-bash"><code>$ <span class="token function">npm</span> run docs:dev
+</code></pre><p>and my terminal print message</p><pre class="language-bash"><code>  VuePress dev server listening at http://localhost:8080/
+  <span class="token punctuation">[</span>18:50:15<span class="token punctuation">]</span> ✔ successfully compiled.
+</code></pre><p>If you run <code>http://localhost:8080/</code> you will see page <code>404 not found</code>, beacause you don't specify the content for home page. In Vuepress, <code>README.md</code> is convert <code>index.html</code> in each folder. So you must create file <code>README.md</code> with content and try again.</p><p>Then I try run build mode</p><pre class="language-bash"><code>$ <span class="token function">npm</span> run docs:build
+the production will be created <span class="token keyword">in</span> .vuepress folder <span class="token punctuation">(</span>a hidden folder<span class="token punctuation">)</span> to explore it you just run
+$ <span class="token function">cd</span> .vuepress
+</code></pre><p>That is all step you need to build static web by Vuepress. We continue apply our static web with github page.</p><h2 id="apply-production-to-github-page"><a href="#apply-production-to-github-page" aria-hidden="true" class="header-anchor">#</a> Apply production to github page</h2></div><!----><!----></div></div></div>
+    <script src="/assets/js/0.54d8d184.js" defer></script><script src="/assets/js/app.7eb0de9b.js" defer></script>
+  </body>
+</html>
