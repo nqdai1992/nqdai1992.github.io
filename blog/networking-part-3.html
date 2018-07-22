@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dainguyen&#39;blog | Networking (phần 3) Network core</title>
+    <meta name="description" content="Code self-study">
+    
+    <meta name="description" content="Networking for beginner"><meta name="keywords" content="Networking">
+    <link rel="preload" href="/assets/css/0.styles.eb5f6a26.css" as="style"><link rel="preload" href="/assets/js/app.317bb2a7.js" as="script"><link rel="preload" href="/assets/js/3.94825fc0.js" as="script"><link rel="prefetch" href="/assets/js/2.1ba6c5e4.js"><link rel="prefetch" href="/assets/js/1.26790477.js"><link rel="prefetch" href="/assets/js/4.4bb377ee.js"><link rel="prefetch" href="/assets/js/5.195651ea.js"><link rel="prefetch" href="/assets/js/6.6c2a2fc9.js"><link rel="prefetch" href="/assets/js/7.ec48ac8c.js"><link rel="prefetch" href="/assets/js/8.2dd11e3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.eb5f6a26.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Dainguyen'blog
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Networking (phần 3) Network core</span><!----></p><ul class="sidebar-group-items"><li><a href="/blog/networking-part-3.html#viec-truyen-tin-dien-ra-nhu-the-nao" class="sidebar-link">Việc truyền tin diễn ra như thế nào ?</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/networking-part-3.html#cau-truc-network-protocol" class="sidebar-link">Cấu trúc network protocol</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/networking-part-3.html#tan-cong-mang" class="sidebar-link">Tấn công mạng</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="networking-phan-3-network-core"><a href="#networking-phan-3-network-core" aria-hidden="true" class="header-anchor">#</a> Networking (phần 3) Network core</h1><p>Trong phần 2 mình đã tìm hiểu về network edge đã cho chúng ta thấy cách các thiết bị kết nối mới mạng như thế nào và
+những công nghệ để các thiết bị có thể kết nối
+Trong bài viết lần này mình sẽ tìm hiểu về phần network core, network core sẽ đề cập đến cách hoạt động
+trong hệ thống mạng như thế nào chẳng hạn như việc truyền nhận packet, cấu trúc protocol</p><h2 id="viec-truyen-tin-dien-ra-nhu-the-nao"><a href="#viec-truyen-tin-dien-ra-nhu-the-nao" aria-hidden="true" class="header-anchor">#</a> Việc truyền tin diễn ra như thế nào ?</h2><p>Như chúng ta đã biêt việc gửi thông tin hay các message từ host này qua host khác sẽ được chia là làm nhiều
+packet hay gói tin để gửi đi, các gói tin này sẽ được đi qua các communication link và các <strong>packet switch</strong>
+(chính là router hay switch chia mạng). Sẽ có 2 thông số để quyết định tốc độ packet di chuyển là dung lượng
+packet (L) và tốc độ đường truyền (R) bao nhiêu bit/sec.</p><p>Các packet truyền đi không giống như việc chúng ra dùng một vòi nước để đưa nước từ chỗ chứa này đến chỗ chứa khác.
+Các packet switch có cơ chế lưu trữ trước khi gửi tiếp đến một packet switch khác hoặc một thiêt bị.
+Cơ chế này tên là <strong>store-and-forward transmission</strong>, cụ thể các packet sẽ phải được nhận một cách toàn vẹn trước khi được
+gửi đi.</p><p><img src="/assets/img/storageAndForward.36f95df2.png" alt="fig1"></p><p>Một chú ý trong phần này là việc nhận và việc gửi là bất đồng bộ với nhau.
+Có nghĩa là trong khi gửi packet thứ nhất thì vẫn có thể nhận các packet khác.
+Các packet khác khi được nhận trong quá trình gửi đi sẽ được lưu trong một hàng chờ
+gọi là <strong>output buffer</strong> hay <strong>output queue</strong> và vì xếp hàng nên sẽ sinh ra một độ trễ gọi là
+<strong>queuing delays</strong>. Độ trễ này lâu đến mức nào thì nó phụ thuộc vào độ tắc nghẽn của hệ thống mạng.
+Vậy hết chỗ xếp hàng rồi thì các gói tin khác đến thì đợi ở đâu ? Câu trả lời là chả ở đâu cả,
+có nghĩa là mất dữ liệu.</p><h2 id="cau-truc-network-protocol"><a href="#cau-truc-network-protocol" aria-hidden="true" class="header-anchor">#</a> Cấu trúc network protocol</h2><p>Cấu trúc layer hiện tại mạng internet đang sử dụng là cấu trúc 5 tầng từ trên xuống lần lượt là:
+<strong>Application, Transport, Network, Link, Physical</strong>, ngoài ra còn có một cấu trúc 7 tầng nữa bạn nào muốn tìm hiểu
+thì từ khóa là <strong>OSI model</strong></p><p>Sơ lược vai trò từng tầng như sau</p><ul><li><strong>Application layer</strong>: Nhận thông tin cần gửi từ phía người dùng dựa vào các protocol như HTTP, SMTP, FTP và đóng gói lại thành một message và gửi xuống tầng tiếp theo</li><li><strong>Transport layer</strong>: Nhiệm vụ chia nhỏ message từ phía application và đóng gói lại gọi là 1 <strong>segment</strong> và gửi xuống tầng dưới.
+Trong tầng này có 2 protocol là TCP và UDP, trong đó TCP cung cấp thêm cơ chế <strong>congestion-control</strong> để
+kiểm soát tắc nghẽn, còn UDP thì không có hỗ trợ nào cả.</li><li><strong>Network layer</strong>: Đảm bảo cho thông tin có thể gửi được đúng nơi cần nhận dựa vào thông tin IP của host và đóng gói lại gọi là các <strong>datagram</strong></li><li><strong>Link layer</strong>: Tạo chuẩn chung cho các gói tin gửi đi để có thể chuyển đi giữa các link khác nhau, đóng gói thành các <strong>frame</strong></li><li><strong>Physical layer</strong>: Tầng này là tầng về các kết nối vật lý như cáp quang, cáp đồng trục ...</li></ul><p>Cách thức gói tin được gửi đi theo cấu trúc 5 tầng như sau:
+Gói tin được gửi đi sẽ xuất phát từ tầng Application của máy gửi đi cho đên tầng Link mỗi tầng này sẽ
+được bổ sung thông tin và đóng gói sau đó chuyển đến tầng Physical để chuyển sang máy nhận.
+Đối mới máy nhận thì gói tin đi từ dưới lên từ tầng Physical lên đến Application của máy nhận, qua mỗi tầng
+thì các gói tin sẽ được giải mã và lấy được gói tin cuối cùng ở tầng Application</p><p><img src="/assets/img/flowPacket.16e18477.png" alt="fig1"></p><h2 id="tan-cong-mang"><a href="#tan-cong-mang" aria-hidden="true" class="header-anchor">#</a> Tấn công mạng</h2><p>Trong phần giớ thiệu này, mình cũng thấy có thêm một số kiến thức khá hay về việc tấn công trên mạng.
+Hẳn các bạn đã nghe về <strong>malware</strong> chắc là ghép từ malicious và software.
+Vậy malware là gì ? Nó là một chương trình xâm nhập vào máy bạn với chủ tâm ác ý, như xóa file, lấy cắp thông tin ...
+Malware chia làm 2 loại là <strong>virus</strong> và <strong>worm</strong>. <strong>Virus</strong> là các malware nhiễm vào máy tính thông qua tương tác người dùng
+(chẳng hạn như click email, click quảng cáo ...), còn <strong>worm</strong> là các malware xâm nhập mà không cần tương tác của người dùng
+đa số là do cài phần mền lạ.</p><p>Việc tấn công trên mạng sẽ tấn công vào máy chủ và phần cơ sở hạ tầng cho kết nối, việc tất công này được gọi là:
+<strong>denial-of-service (DoS)</strong>, có 3 loại tấn công:</p><ul><li>Vulnerability attack: là gửi nhưng gói tin có chứa mã độ để gây rối loạn hệ thống</li><li>Bandwidth flooding: Khi mà hệ thống ngon quá không làm gì được thì có một cách tấn công nhằm mục đích
+làm tắc nghẽn bằng thông.</li><li>Connection flooding: bên cạnh việc gây tắc nghẽ băng thông thì việc tấn công cũng có thể thực hiện nhờ việc tăng lượng kết nối</li></ul><p>Có một thuật ngữ nữa mọi người hay nghe thấy là <strong>distributed DoS (DDoS)</strong> nó cũng là <strong>DoS</strong> nhưng nếu tấn công
+từ 1 máy thì sẽ nhanh chóng bị phát hiện nên kẻ tấn công sẽ gửi các maleware đên các máy khác gọi là <strong>slave</strong>
+để điều khiển hệ thống máy slave này (<strong>botnet</strong>) tất công vào 1 máy đích.</p></div><!----><!----></div></div></div>
+    <script src="/assets/js/3.94825fc0.js" defer></script><script src="/assets/js/app.317bb2a7.js" defer></script>
+  </body>
+</html>

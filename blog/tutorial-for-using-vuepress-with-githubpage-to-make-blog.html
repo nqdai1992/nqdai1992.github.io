@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dainguyen&#39;blog | Hướng dẫn sử dụng Vuepress và Githubpage để tạo blog</title>
+    <meta name="description" content="Code self-study">
+    
+    <meta name="description" content="Hướng dẫn sử dụng Vuepress và Githubpage để tạo blog"><meta name="keywords" content="Vuejs, Vuepress, blog, github_page">
+    <link rel="preload" href="/assets/css/0.styles.eb5f6a26.css" as="style"><link rel="preload" href="/assets/js/app.317bb2a7.js" as="script"><link rel="preload" href="/assets/js/2.1ba6c5e4.js" as="script"><link rel="prefetch" href="/assets/js/1.26790477.js"><link rel="prefetch" href="/assets/js/3.94825fc0.js"><link rel="prefetch" href="/assets/js/4.4bb377ee.js"><link rel="prefetch" href="/assets/js/5.195651ea.js"><link rel="prefetch" href="/assets/js/6.6c2a2fc9.js"><link rel="prefetch" href="/assets/js/7.ec48ac8c.js"><link rel="prefetch" href="/assets/js/8.2dd11e3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.eb5f6a26.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Dainguyen'blog
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Hướng dẫn sử dụng Vuepress và Githubpage để tạo blog</span><!----></p><ul class="sidebar-group-items"><li><a href="/blog/tutorial-for-using-vuepress-with-githubpage-to-make-blog.html#cai-dat-va-chay-vuepress" class="sidebar-link">Cài đặt và chạy Vuepress</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/tutorial-for-using-vuepress-with-githubpage-to-make-blog.html#dua-san-pham-len-githubpage" class="sidebar-link">Đưa sản phẩm lên githubpage</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><img src="/vuepress-logo.png" style="width: 400px; display: block; margin-right: auto; margin-left: auto;"><h1 id="huong-dan-su-dung-vuepress-va-githubpage-de-tao-blog"><a href="#huong-dan-su-dung-vuepress-va-githubpage-de-tao-blog" aria-hidden="true" class="header-anchor">#</a> Hướng dẫn sử dụng Vuepress và Githubpage để tạo blog</h1><p>Gần đây mình thấy một số anh em trong group freecodecamp Hanoi tạo blog bằng github page
+nên mình cũng tìm hiểu xem tạo blog kiểu gì với githupage.
+Mình bắt đầu vọc từ doc trên trang chủ của githupage, nói chung tạo một page tĩnh kiểu theo
+hướng dẫn thì trong vài phút (tùy tốc độ mạng). Tuy nhiên thì nhìn blog thiên hạ màu mè các kiểu
+nên mình cũng tìm hiểu cách trang trí thì gặp Jekyll. Đọc một hồi thì thấy Jekyll hộ trợ cho githubpage
+mỗi tội tự nhiên bắt cài ruby mới dùng được mà mình thì không thích cái nhưng thứ mà cả năm mới dùng và
+nếu cài chỉ để phục vụ mỗi việc tạo blog thì cũng không đáng. Vì vậy mình thử tìm hiểu các tạo blog bằng framework
+mình hay làm việc là Vuejs và mình chọn Vuepress để vọc.</p><p>Vuepress là một sản phẩm nữa của tác giả EvanYou với mục đích tạo web tĩnh và có khả năng SEO,
+chi tiết hơn thì bạn có thể đọc thêm ở <a href="https://vuepress.vuejs.org/guide/#features" target="_blank" rel="noopener noreferrer">đây</a>. Tại đang ham hố
+làm blog nên mình cũng không đào sâu chi tiết. Nhìn chung thì ấn tượng đầu tiên là doc của Vuepress vẫn còn
+sơ sài và phải tốn khá nhiều thời gian để mò mẫm.</p><h2 id="cai-dat-va-chay-vuepress"><a href="#cai-dat-va-chay-vuepress" aria-hidden="true" class="header-anchor">#</a> Cài đặt và chạy Vuepress</h2><p>Mình bắt đầu với việc tải Vuepress bằng npm:</p><pre class="language-bash"><code>$ <span class="token function">mkdir</span> blog
+$ <span class="token function">cd</span> blog
+$ <span class="token function">npm</span> init
+$ <span class="token function">npm</span> <span class="token function">install</span> --save vuepress
+</code></pre><p>vì không có sẵn CLI như Vue nên các anh em sẽ cần thêm chút command trong <code>package.json</code> để chạy được chế độ dev và build</p><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;docs:dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress dev docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;docs:build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress build docs&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>Anh em chạy thử môi trường dev để kiểm tra luôn</p><pre class="language-bash"><code>$ <span class="token function">npm</span> run docs:dev
+</code></pre><p>sau khi chạy xong thì terminal sẽ bào</p><pre class="language-bash"><code>  VuePress dev server listening at http://localhost:8080/
+  <span class="token punctuation">[</span>18:50:15<span class="token punctuation">]</span> ✔ successfully compiled.
+</code></pre><p>Anh em truy cập <code>http://localhost:8080/</code> sẽ thấy <code>404 not found</code>,
+vì chúng ta chưa chỉ định nội dung mặc định cho trang.
+Trong Vuepress, các trang <code>README.md</code> sẽ được chuyển thành <code>index.html</code> trong các thư mục.
+Vì vậy chúng ta chỉ cần tạo thư mục <code>docs</code> và thêm <code>README.md</code> và thử lại.
+Chú ý mọi động tác đều thực hiện trong thư mục docs Vuepress sẽ compile từ thư mục này ra.</p><p>Vậy là xong chế độ dev, chuyển sang chế độ build kiểm tra</p><pre class="language-bash"><code>$ <span class="token function">npm</span> run docs:build
+</code></pre><p>sản phẩm sẽ được đặt trong thư mục <code>.vuepress</code> (một thư mục ẩn), chúng ta có thể truy cập thư mục này như bình thường</p><pre class="language-text"><code>$ cd .vuepress
+</code></pre><p>Vậy là việc tạo một trang web tĩnh cơ bản bằng Vuepress chỉ gồm các bước như vậy</p><h2 id="dua-san-pham-len-githubpage"><a href="#dua-san-pham-len-githubpage" aria-hidden="true" class="header-anchor">#</a> Đưa sản phẩm lên githubpage</h2><p>Đưa sản phẩm lên thì đã có <a href="https://vuepress.vuejs.org/guide/deploy.html#github-pages" target="_blank" rel="noopener noreferrer">hướng dẫn</a> chi tiết trong trang chủ rồi.
+Bạn chỉ cần tạo file <code>.sh</code> đối với Unix và <code>bash</code> đối với Window là xong.
+Khi chạy thì với nhưng bạn dùng Unix như mình sẽ gặp một số vấn đề sau.
+Vấn đề thứ nhất là phân quyền để chạy được file <code>.sh</code> bạn sẽ cần phân quyên theo lệnh <code>chmod 755</code> để cho phép file <code>.sh</code> quyền đọc và thực thi.
+Vấn đề thứ 2 bãn sẽ gặp phải đó là không thể push code lên git được, để giải quyết cấn đề này các bạn cần tạo một sha key trong máy (theo <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#generating-a-new-ssh-key" target="_blank" rel="noopener noreferrer">hướng dẫn</a>)
+sau đó bạn lấy key trong file <code>id_rsa.pub</code> thêm vào tài khoản git (theo <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="noopener noreferrer">hướng dẫn</a>)</p><p>Trên đây là toàn bộ các bước để tạo blog trên gitpage mà mình tìm hiểu được. Cảm ơn anh em đã bỏ thời gian đoc.</p></div><!----><!----></div></div></div>
+    <script src="/assets/js/2.1ba6c5e4.js" defer></script><script src="/assets/js/app.317bb2a7.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dainguyen&#39;blog | Networking (phần 1) Giới thiệu về networking</title>
+    <meta name="description" content="Code self-study">
+    
+    <meta name="description" content="Networking for beginner"><meta name="keywords" content="Networking">
+    <link rel="preload" href="/assets/css/0.styles.eb5f6a26.css" as="style"><link rel="preload" href="/assets/js/app.317bb2a7.js" as="script"><link rel="preload" href="/assets/js/5.195651ea.js" as="script"><link rel="prefetch" href="/assets/js/2.1ba6c5e4.js"><link rel="prefetch" href="/assets/js/1.26790477.js"><link rel="prefetch" href="/assets/js/3.94825fc0.js"><link rel="prefetch" href="/assets/js/4.4bb377ee.js"><link rel="prefetch" href="/assets/js/6.6c2a2fc9.js"><link rel="prefetch" href="/assets/js/7.ec48ac8c.js"><link rel="prefetch" href="/assets/js/8.2dd11e3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.eb5f6a26.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Dainguyen'blog
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Networking (phần 1) Giới thiệu về networking</span><!----></p><ul class="sidebar-group-items"><li><a href="/blog/networking-part-1.html#mot-so-khai-niem-co-ban" class="sidebar-link">Một số khái niệm cơ bản</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/networking-part-1.html#protocol-la-gi" class="sidebar-link">Protocol là gì ?</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="networking-phan-1-gioi-thieu-ve-networking"><a href="#networking-phan-1-gioi-thieu-ve-networking" aria-hidden="true" class="header-anchor">#</a> Networking (phần 1) Giới thiệu về networking</h1><h2 id="mot-so-khai-niem-co-ban"><a href="#mot-so-khai-niem-co-ban" aria-hidden="true" class="header-anchor">#</a> Một số khái niệm cơ bản</h2><p>Internet là một mạng lươi kết nối giữa các máy tính trên toàn thế giới, bên cạnh các máy tính truyền thống như PC hay Laptop
+thì hiện tại đã có thêm những thiết bị mới tham gia mạng lưới này như smartphone, smartwatch, nhà thông minh, tủ lạnh ...
+Những thiết bị trong mạng lưới này được gọi là <strong>host</strong> hay <strong>endsystems</strong>.</p><p>Các endsystem kết nối với nhau bởi một mạng lưới <strong>communication links</strong> và <strong>packet switches</strong>.
+<strong>Communication link</strong> ở đây chính là những thứ chúng ta hay gặp như cáp quang, cáp đồng, sóng radio, mỗi loại communication này lại
+có một tốc độ tính bằng bit/giây được gọi là <strong>transmission rate</strong>.</p><p>Khái niệm tiếp theo là <strong>packet switch</strong>. <strong>Packet switch</strong> là một thành phần chuyên đi nhặt các gói tin hay <strong>packet</strong> để gửi đi, nó được chia
+làm 2 loại là <strong>routers</strong> và <strong>link-layer switch</strong> chi tiết hơn xem <a href="https://techgist.net/su-khac-nhau-giua-hub-switch-va-router/" target="_blank" rel="noopener noreferrer">ở đây</a>
+Quá trình để đưa gói tin từ noi gửi đến nơi nhận được gọi là <strong>route</strong> hoặc <strong>path</strong>.</p><p>Các endsystem truy cập Internet thông qua các nhà cung cấp dịch vụ internet <strong>Internet Service Providers (ISPs)</strong>
+Để các gói tin có thể chuyển hướng đúng và chính xác thì các ensystem sẽ phải tuân thử theo một giao thức chung
+<strong>protocol</strong>, có 2 protocol quan trọng là <strong>Transmission Control Protocol (TCP)</strong> và <strong>Internet Protocol (IP)</strong> ngoài ra
+có thêm <strong>HTTP</strong> cho web và <strong>SMTP</strong> cho email.</p><h2 id="protocol-la-gi"><a href="#protocol-la-gi" aria-hidden="true" class="header-anchor">#</a> Protocol là gì ?</h2><p>Có một minh họa mình thấy khá thích trong cuốn <a href="https://www.amazon.com/Computer-Networking-Top-Down-Approach-6th/dp/0132856204" target="_blank" rel="noopener noreferrer">Computer Networking: A Top-Down Approach</a>
+về việc 1 protocol là thế nào. Bản thân giữa con người với nhau chúng ta cũng đang chia sẻ 1 protocol khi chúng ta giao tiếp với nhau sau đây là một hình ảnh minh họa trong
+sách cho việc này.</p><p><img src="/assets/img/HumanProtocalvsComputerNetworkPotocol.b0f9fada.png" alt="fig1"></p><p>Như trong hình minh họa thì để bắt đầu giao tiếp, cụ thể ở đây là hỏi giờ thì việc đầu tiên đó chính là
+chào hỏi đó cần như một khuôn mẫu cho tất cả các giao tiếp, kế đến mới đi vào vấn đề chính.
+Việc giao tiếp giữa client và server cũng vậy cần có 1 chuẩn chung cũng như thứ tự thực hiện để có thể giao tiếp với nhau
+cái này gọi là giao thức hay protocol</p></div><!----><!----></div></div></div>
+    <script src="/assets/js/5.195651ea.js" defer></script><script src="/assets/js/app.317bb2a7.js" defer></script>
+  </body>
+</html>

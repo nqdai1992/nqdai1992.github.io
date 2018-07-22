@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dainguyen&#39;blog | Networking (phần 2) Network edge</title>
+    <meta name="description" content="Code self-study">
+    
+    <meta name="description" content="Networking for beginner"><meta name="keywords" content="Networking">
+    <link rel="preload" href="/assets/css/0.styles.eb5f6a26.css" as="style"><link rel="preload" href="/assets/js/app.317bb2a7.js" as="script"><link rel="preload" href="/assets/js/4.4bb377ee.js" as="script"><link rel="prefetch" href="/assets/js/2.1ba6c5e4.js"><link rel="prefetch" href="/assets/js/1.26790477.js"><link rel="prefetch" href="/assets/js/3.94825fc0.js"><link rel="prefetch" href="/assets/js/5.195651ea.js"><link rel="prefetch" href="/assets/js/6.6c2a2fc9.js"><link rel="prefetch" href="/assets/js/7.ec48ac8c.js"><link rel="prefetch" href="/assets/js/8.2dd11e3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.eb5f6a26.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Dainguyen'blog
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Trang chủ</a></div><div class="nav-item"><a href="/contact/" class="nav-link">Liên hệ</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Networking (phần 2) Network edge</span><!----></p><ul class="sidebar-group-items"><li><a href="/blog/networking-part-2.html#network-edge" class="sidebar-link">Network edge</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/networking-part-2.html#cac-cong-nghe-su-dung-trong-edge-network" class="sidebar-link">Các công nghệ sử dụng trong edge network</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="networking-phan-2-network-edge"><a href="#networking-phan-2-network-edge" aria-hidden="true" class="header-anchor">#</a> Networking (phần 2) Network edge</h1><p>Hệ thống network được phân loại làm 2 loại là edge network và network core. Trong bài viết này mình sẽ nói về edge network,
+loại network liên kết các endsystem như các thiết bị điện thoại, laptop, các thiết bị thông minh, server ...</p><h2 id="network-edge"><a href="#network-edge" aria-hidden="true" class="header-anchor">#</a> Network edge</h2><p>Network edge đề cập đến mạng lưới kết nối những end system hay host như máy tính, điện thoại, các thiết bị thông minh, server
+vì chúng là những nơi trực tiếp thực hiện các ứng dụng để truy cập mạng và là những đầu mút ngoài cùng trong hệ thống network.
+Trong network edge có một khái niệm gọi là <strong>access network</strong> đây là mạng lưới kết nối các end system với router đầu tiên
+(hay còn gọi là edge router) lý do cũng tương tự vì edge router là những router lớp ngoài cùng connect trực tiếp với các end system.</p><p><img src="/assets/img/EdgeNetwork.b161f4c6.png" alt="fig1"></p><p>Access network được chia là 3 loại gồm có:</p><ul><li><strong>mobile network</strong> mạng lưới kết nối các thiết bị di động như điện thoại, ô tô, cái gì mà di động kết nối mạng là nằm trong này,</li><li><strong>home network</strong> đây là hệ thống mạng liên kết tất cả các thiết bị trong một hộ gia định</li><li><strong>enterprise network</strong> đây là hệ thống của các công ty hay các nhà cung cấp dịch vụ.</li></ul><h2 id="cac-cong-nghe-su-dung-trong-edge-network"><a href="#cac-cong-nghe-su-dung-trong-edge-network" aria-hidden="true" class="header-anchor">#</a> Các công nghệ sử dụng trong edge network</h2><p>Công nghệ đầu tiên chúng ta nói đến đó là <strong>DSL</strong>, chắc hẳn nhiều bạn đã từng nghe qua về thuật ngữ này.
+<strong>DSL</strong> là viêt tắt của <strong>digital subscriber line</strong>, công nghệ này tận dụng đường dây điện thoại để
+kết nối mạng internet thông qua các ISP là các nhà cung cấp dịch vụ điện thoại.
+Vậy câu hỏi là để chung vậy thì biết tín hiệu nào mà kết nối. Câu truyện ở đây là
+các tín hiệu sẽ được chuyển đổi thành tần số và gửi đi, dựa vào tần số cao thấp sẽ xác định được tín hiệu</p><p>Cụ thể hơn là DSL chia là 3 kênh, kết nối mạng chiếm 2 kênh:</p><ul><li>Kênh tốc độ cao (50kHz đến 1MHz) gọi là <strong>downstream</strong></li><li>Kênh tốc độ trung bình (4kHz đến 50kHz) là <strong>upstream</strong></li><li>Kênh gốc để dùng cho điện thoại (0 đến 4kHz)</li></ul><p>Cái khá thú vị là sao mà tần số cao thì đặt tên downstream còn thấp lại là upstream,
+thì mình có để ý là tốc độ cao sử dụng để download nên tên là downstream và
+sử dụng kênh tốc độ trung bình để upload dữ liệu nên gọi là upstream.</p><p>Bên cạnh việc sử dụng đường dây điện thoại thì có một công nghệ nữa gọi là <strong>cable Internet access</strong>
+sử dụng đường dây dịch vụ truyền hình để kêt nối internet, nói sở qua về công nghệ này thì
+các hộ gia định sẽ được kết nói bằng cáp đồng trục với fiber node và các fiber node sẽ được liên kết
+với một server giải mã tín hiệu bằng cáp quang. Vì việc sử dụng 2 loại dây trong hệ thống nên hệ thống
+này còn có tên là <strong>hybrid fiber coax (HFC)</strong></p><p>Ngoài ra để có thể tăng tốc độ 1 công nghệ nữa được sử dụng đó là <strong>fiber to the home (FTTH)</strong> hiểu cách đơn giản là
+không dùng nửa đồng trục nữa mà dùng hết cáp quang cho nhanh.</p><p>Công nghệ tiếp theo chúng ta nói đến là <strong>Ethernet</strong> sử dụng để kêt nối trong mạng nội bộ <strong>LAN</strong>,
+<strong>ethernet</strong> có phạm vi xa và tốc độ cao nên thường được sử dụng trong các công ty, trường học, bệnh viện và đôi khi là hộ gia đình</p><p>Cuối cùng, chúng ta đề cập đến mạng không dây cụ thể là wifi, 3g hay LTE chắc mấy thuật ngữ này không còn mấy xa lạ nữa.
+tạm thời trong bài viết này thì chúng ta chỉ phân biệt theo phạm vi phủ sóng.
+Đuối nhất là wifi thường thì chỉ sử dụng trong 1 không gian hẹp như gia đinh hay văn phong.
+Cao hơn đó là 3G viết tăt của <strong>third-generation</strong> phủ sóng rộng hơn tốc độ cao hơn.
+Gần đây nhất là LTE (ai đăng ký sim 4G thấy chữ LTE trên góc màn hình thì chính là nó) viết tắt <strong>Long-Term Evolution</strong> hay anh em còn biết với cái tên là 4G <strong>(fourth-generation)</strong>
+độ phủ sóng rộng và tốc độ cao hơn 3G.</p></div><!----><!----></div></div></div>
+    <script src="/assets/js/4.4bb377ee.js" defer></script><script src="/assets/js/app.317bb2a7.js" defer></script>
+  </body>
+</html>
